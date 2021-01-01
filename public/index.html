@@ -13,17 +13,264 @@
         />
     </head>
     <body>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-10 align-middle">
+                    1. Выдать список всех офисов
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-10 align-middle">
+                    2. Выдать общее кол-во сотрудников в офисе
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-10 align-middle">
+                    3. Выдать кол-во разработчиков в офисе
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-6 align-middle">
+                    4. Выдать кол-во разработчиков определенной специальности
+                    либо/и уровня в офисе
+                </div>
+                <div class="col-4">
+                    <select class="form-select">
+                        <option selected>Выберите специальность...</option>
+                        <option value="1">Дизайнер</option>
+                        <option value="2">БД архитектор</option>
+                        <option value="3">Тимлид</option>
+                        <option value="4">Девелопер</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-6 align-middle">
+                    5. Выдать список разработчиков с кол-вом проектов больше,
+                    меньше, либо равно n
+                </div>
+                <div class="radio col-2">
+                    <div class="form-check form-check-inline">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="inlineRadio1"
+                            value="option1"
+                        />
+                        <label class="form-check-label" for="inlineRadio1"
+                            >&gt</label
+                        >
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="inlineRadio2"
+                            value="option2"
+                        />
+                        <label class="form-check-label" for="inlineRadio2"
+                            >&lt</label
+                        >
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="inlineRadio3"
+                            value="option3"
+                        />
+                        <label class="form-check-label" for="inlineRadio3"
+                            >=</label
+                        >
+                    </div>
+                </div>
+                <div class="col-2">
+                    <input type="text" class="form-control" placeholder="n" />
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-6 align-middle">
+                    6. Выдать список сотрудников, устроенных в офис за указанный
+                    промежуток времени в офисе
+                </div>
+                <div class="col-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Date start"
+                    />
+                </div>
+                <div class="col-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Date end"
+                    />
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-7 align-middle">
+                    7. Выдать список проектов в разработке которого участвовал
+                    указанный разработчик
+                </div>
+                <div class="col-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Введите разработчика..."
+                    />
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-6 align-middle">
+                    8. Выдать список проектов с ценой в указанном диапазоне
+                </div>
+                <div class="col-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Цена от"
+                    />
+                </div>
+                <div class="col-2">
+                    <input type="text" class="form-control" placeholder="до" />
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-8 align-middle">
+                    9. Выдать список проектов, сортированный по цене (по
+                    убыванию, по возрастанию)
+                </div>
+                <div class="radio col-2">
+                    <div class="form-check form-check-inline">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="inlineRadio1"
+                            value="option1"
+                        />
+                        <label class="form-check-label" for="inlineRadio1"
+                            >&gt</label
+                        >
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="inlineRadio2"
+                            value="option2"
+                        />
+                        <label class="form-check-label" for="inlineRadio2"
+                            >&lt</label
+                        >
+                    </div>
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-7 align-middle">
+                    10. Выдать список проектов с указанным заказчиком
+                </div>
+                <div class="col-3">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Введите заказчика..."
+                    />
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-10 align-middle">
+                    11. Выдать список первых 10 клиентов нашей компании
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <div class="container-md bg-light mt-3">
+            <div class="row align-items-center">
+                <div class="col-8 align-middle">
+                    12. Выдать список клиентов, сортированный по общей сумме
+                    денег, потраченных ими на проекты (по убыванию, возрастанию)
+                </div>
+                <div class="radio col-2">
+                    <div class="form-check form-check-inline">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="inlineRadio1"
+                            value="option1"
+                        />
+                        <label class="form-check-label" for="inlineRadio1"
+                            >&gt</label
+                        >
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="inlineRadioOptions"
+                            id="inlineRadio2"
+                            value="option2"
+                        />
+                        <label class="form-check-label" for="inlineRadio2"
+                            >&lt</label
+                        >
+                    </div>
+                </div>
+                <button class="btn btn-primary col-2">Нажми</button>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"
+        ></script>
     </body>
 </html>
