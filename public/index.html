@@ -19,17 +19,37 @@
 
         <form class="mb-4" action="/office_workers_count">
             <p>2. Выдать общее кол-во сотрудников в офисе</p>
+            <select id="select-office" name="office">
+                <option selected>Выберите офис...</option>
+                <option value="1">Москва</option>
+                <option value="2">Владимир</option>
+                <option value="3">Норильск</option>
+                <option value="4">Рязань</option>
+                <option value="5">Грозный</option>
+                <option value="6">Уфа</option>
+                <option value="7">Казань</option>
+            </select>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
         <form class="mb-4" action="/office_dev_workers_count">
             <p>3. Выдать кол-во разработчиков в офисе</p>
+            <select id="select-office" name="office">
+                <option selected>Выберите офис...</option>
+                <option value="1">Москва</option>
+                <option value="2">Владимир</option>
+                <option value="3">Норильск</option>
+                <option value="4">Рязань</option>
+                <option value="5">Грозный</option>
+                <option value="6">Уфа</option>
+                <option value="7">Казань</option>
+            </select>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
         <form class="mb-4" action="/office_dev_workers_spec_count">
             <p>
-                4. Выдать кол-во разработчиков определенной специальности либо/и
+                4. Выдать кол-во разработчиков определенной специальности и
                 уровня в офисе
             </p>
             <select id="select-dev" name="dev">
@@ -44,6 +64,16 @@
                 <option value="junior">Джуниор</option>
                 <option value="middle">Миддл</option>
                 <option value="senior">Сеньор</option>
+            </select>
+            <select id="select-office" name="office">
+                <option selected>Выберите офис...</option>
+                <option value="1">Москва</option>
+                <option value="2">Владимир</option>
+                <option value="3">Норильск</option>
+                <option value="4">Рязань</option>
+                <option value="5">Грозный</option>
+                <option value="6">Уфа</option>
+                <option value="7">Казань</option>
             </select>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -60,7 +90,7 @@
                         type="radio"
                         name="symbol"
                         id="exampleRadios1"
-                        value="gt"
+                        value=">"
                     />
                     <label class="form-check-label" for="exampleRadios1">
                         &gt
@@ -72,7 +102,7 @@
                         type="radio"
                         name="symbol"
                         id="exampleRadios2"
-                        value="lt"
+                        value="<"
                     />
                     <label class="form-check-label" for="exampleRadios2">
                         &lt
@@ -84,7 +114,7 @@
                         type="radio"
                         name="symbol"
                         id="exampleRadios3"
-                        value="eq"
+                        value="="
                     />
                     <label class="form-check-label" for="exampleRadios3">
                         =
@@ -141,7 +171,7 @@
                 type="text"
                 name="devName"
                 id=""
-                placeholder="Введите разработчика..."
+                placeholder="Введите номер разработчика..."
             />
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -159,9 +189,9 @@
                 по возрастанию)
             </p>
             <select id="select-dev" name="price_sort">
-                <option selected>Выберите специальность...</option>
-                <option value="priceUp">По возрастанию</option>
-                <option value="priceDown">По убыванию</option>
+                <option selected>Выберите модификатор...</option>
+                <option value="ASC">По возрастанию</option>
+                <option value="DESC">По убыванию</option>
             </select>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -189,8 +219,8 @@
             </p>
             <select id="select-dev" name="client_cash_sort">
                 <option selected>Выберите специальность...</option>
-                <option value="priceUp">По возрастанию</option>
-                <option value="priceDown">По убыванию</option>
+                <option value="ASC">По возрастанию</option>
+                <option value="DESC">По убыванию</option>
             </select>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
