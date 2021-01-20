@@ -1,10 +1,8 @@
+require("dotenv").config();
 const Sequelize = require("sequelize");
-const dotenv = require("dotenv");
-
-dotenv.config();
 
 module.exports = new Sequelize(
-    "postgres://postgres:123456@127.0.0.1:5432/postgres",
+    `postgres://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_ADDR}/postgres`,
     {
         logging: console.log,
         define: {
