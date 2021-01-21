@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+    app:
+        container_name: ranepa_app
+        restart: always
+        build: .
+        ports:
+            - "3000:3000"
+        links:
+            - db
+
+db:
+    container_name: ranepa_database
+    image: postgres
+    ports:
+        - "5432:5432"
+    environment:
+        POSTGRES_PASSWORD: 123456
