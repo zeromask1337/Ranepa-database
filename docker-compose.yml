@@ -10,10 +10,10 @@ services:
         links:
             - db
 
-db:
-    container_name: ranepa_database
-    image: postgres
-    ports:
-        - "5432:5432"
-    environment:
-        POSTGRES_PASSWORD: 123456
+    db:
+        container_name: ranepa_database
+        image: postgres
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_PASSWORD: 123456
