@@ -1,4 +1,5 @@
 require("dotenv").config();
+const { Clients } = require("./models/models");
 const express = require("express");
 const app = require("./req/requests");
 
@@ -9,6 +10,9 @@ const db = require("./config/database");
 db.authenticate()
     .then(() => console.log("Database connected..."))
     .catch((err) => console.log("Error: " + err));
+
+//Synchronize models
+db.sync().then(console.log("Synced"));
 
 //Express
 app.use(express.static("public"));
