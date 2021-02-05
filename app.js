@@ -1,5 +1,11 @@
 require("dotenv").config();
-const { Clients } = require("./models/models");
+const {
+    Clients,
+    Developer,
+    Employees,
+    Office,
+    Projects,
+} = require("./models/models");
 const express = require("express");
 const app = require("./req/requests");
 
@@ -19,3 +25,6 @@ app.use(express.static("public"));
 app.listen(process.env.PORT, () =>
     console.log(`Server started on port ${process.env.PORT}...`)
 );
+
+const offices = Office.findAll();
+console.log("All offices:", JSON.stringify(offices, null, 2));

@@ -1,5 +1,5 @@
-const { DataTypes } = require("sequelize")
-const db = require("../config/database")
+const { DataTypes } = require("sequelize");
+const db = require("../config/database");
 
 const Office = db.define(
     "Office",
@@ -17,7 +17,7 @@ const Office = db.define(
         tableName: "office",
         timestamps: false,
     }
-)
+);
 
 const Employees = db.define(
     "Employees",
@@ -33,16 +33,16 @@ const Employees = db.define(
         reg_date: DataTypes.DATEONLY,
         salary: DataTypes.DECIMAL(10, 2),
         weekend: DataTypes.INTEGER,
-        office_id: DataTypes.INTEGER,
+        office_id: { type: DataTypes.INTEGER, allowNull: false },
     },
     {
         // Other model options go here
         tableName: "employees",
         timestamps: false,
     }
-)
+);
 
-Employees.hasOne(Office, { foreignKey: "office_id" }) // Foreign key
+Office.belongsTo(Employees, { foreignKey: "office_id" }); // Foreign key
 
 const Developer = db.define(
     "Developer",
@@ -62,9 +62,9 @@ const Developer = db.define(
         tableName: "developer",
         timestamps: false,
     }
-)
+);
 
-Developer.belongsTo(Employees, { foreignKey: "id" }) // Foreign key
+Developer.belongsTo(Employees, { foreignKey: "id" }); // Foreign key
 
 const Clients = db.define(
     "Clients",
@@ -83,7 +83,7 @@ const Clients = db.define(
         tableName: "clients",
         timestamps: false,
     }
-)
+);
 
 const Projects = db.define(
     "Projects",
@@ -108,12 +108,12 @@ const Projects = db.define(
         tableName: "projects",
         timestamps: false,
     }
-)
+);
 
-Projects.hasOne(Developer, { foreignKey: "teamlead_id" }) // Foreign key
-Projects.hasOne(Developer, { foreignKey: "designer_id" }) // Foreign key
-Projects.hasOne(Developer, { foreignKey: "programmer_id" }) // Foreign key
-Projects.hasOne(Developer, { foreignKey: "dbarch_id" }) // Foreign key
-Projects.hasOne(Clients, { foreignKey: "client_id" }) // Foreign key
+Projects.hasOne(Developer, { foreignKey: "teamlead_id" }); // Foreign key
+Projects.hasOne(Developer, { foreignKey: "designer_id" }); // Foreign key
+Projects.hasOne(Developer, { foreignKey: "programmer_id" }); // Foreign key
+Projects.hasOne(Developer, { foreignKey: "dbarch_id" }); // Foreign key
+Projects.hasOne(Clients, { foreignKey: "client_id" }); // Foreign key
 
-module.exports = { Clients, Developer, Employees, Office, Projects }
+module.exports = { Clients, Developer, Employees, Office, Projects };
