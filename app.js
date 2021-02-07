@@ -19,7 +19,7 @@ db.authenticate()
     .then(console.log("All offices " + Office))
     .catch((err) => console.log("Error: " + err));
 
-//Synchronize models
+//Synchronize modelsS
 
 //Express
 app.use(express.static("public"));
