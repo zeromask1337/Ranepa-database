@@ -42,7 +42,6 @@ const Employees = db.define(
     }
 );
 
-// Employees.hasOne(Office, { foreignKey: "office_id" });
 Office.belongsTo(Employees, { foreignKey: "office_id" }); // Foreign key
 
 const Developer = db.define(

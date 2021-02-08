@@ -13,16 +13,31 @@ const app = require("./req/requests");
 const db = require("./config/database");
 
 //Connecting to database
-db.authenticate()
-    .then(() => console.log("Database connected..."))
-    .then(db.sync().then(console.log("Synced")))
-    .then(console.log("All offices " + Office))
-    .catch((err) => console.log("Error: " + err));
+async function dbConnect() {
+    try {
+        await db
+            .authenticate()
+            .then(() => console.log("Database connected..."));
+        await db.sync().then(console.log("Synced")); //Synchronize models
+    } catch (err) {
+        console.error(err);
+    }
+}
 
-//Synchronize modelsS
+async function findAnything() {
+    try {
+        const users = await Clients.findAll();
+        console.log(users.every((user) => user instanceof Clients)); // true
+        console.log("All users:", JSON.stringify(users, null, 2));
+    } catch (err) {
+        console.error(err);
+    }
+}
 
 //Express
 app.use(express.static("public"));
 app.listen(process.env.PORT, () =>
     console.log(`Server started on port ${process.env.PORT}...`)
 );
+dbConnect();
+findAnything();
