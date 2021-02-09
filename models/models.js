@@ -42,7 +42,7 @@ const Employees = db.define(
     }
 );
 
-Office.belongsTo(Employees, { foreignKey: "office_id" }); // Foreign key
+Employees.belongsTo(Office, { foreignKey: "office_id" }); // Foreign key
 
 const Developer = db.define(
     "Developer",
@@ -110,10 +110,10 @@ const Projects = db.define(
     }
 );
 
-Projects.hasOne(Developer, { foreignKey: "teamlead_id" }); // Foreign key
-Projects.hasOne(Developer, { foreignKey: "designer_id" }); // Foreign key
-Projects.hasOne(Developer, { foreignKey: "programmer_id" }); // Foreign key
-Projects.hasOne(Developer, { foreignKey: "dbarch_id" }); // Foreign key
-Projects.hasOne(Clients, { foreignKey: "client_id" }); // Foreign key
+Developer.hasOne(Projects, { foreignKey: "teamlead_id" }); // Foreign key
+Developer.hasOne(Projects, { foreignKey: "designer_id" }); // Foreign key
+Developer.hasOne(Projects, { foreignKey: "programmer_id" }); // Foreign key
+Developer.hasOne(Projects, { foreignKey: "dbarch_id" }); // Foreign key
+Clients.hasOne(Projects, { foreignKey: "client_id" }); // Foreign key
 
 module.exports = { Clients, Developer, Employees, Office, Projects };
