@@ -64,7 +64,8 @@ const Developer = db.define(
     }
 );
 
-Developer.belongsTo(Employees, { foreignKey: "id" }); // Foreign key
+// Developer.belongsTo(Employees);
+Employees.hasOne(Developer, { foreignKey: "id", targetKey: "id" }); // Foreign key
 
 const Clients = db.define(
     "Clients",

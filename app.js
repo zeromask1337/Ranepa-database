@@ -24,20 +24,9 @@ async function dbConnect() {
     }
 }
 
-async function findAnything() {
-    try {
-        const users = await Clients.findAll();
-        console.log(users.every((user) => user instanceof Clients)); // true
-        console.log("All users:", JSON.stringify(users, null, 2));
-    } catch (err) {
-        console.error(err);
-    }
-}
-
-//Express
+//Express server
 app.use(express.static("public"));
 app.listen(process.env.PORT, () =>
     console.log(`Server started on port ${process.env.PORT}...`)
 );
 dbConnect();
-// findAnything();
