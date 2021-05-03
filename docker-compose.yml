@@ -16,4 +16,7 @@ services:
         ports:
             - "5432:5432"
         environment:
-            POSTGRES_PASSWORD: 123456
+            - PORT = 3000
+            - DB_USER = 'postgres'
+            - DB_PASS = 123456
+            - DB_ADDR = 127.0.0.1:5432
