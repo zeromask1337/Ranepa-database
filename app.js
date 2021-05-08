@@ -27,6 +27,6 @@ async function dbConnect() {
 //Express server
 app.use(express.static("public"));
 app.listen(process.env.PORT, () =>
-    console.log(`Server started on port ${process.env.PORT}...`)
+    console.log(`Server started on port ${process.env.PORT}... ${process.env.DB_USER}, ${process.env.DB_PASS}, ${process.env.DB_ADDR}`)
 );
 dbConnect();
