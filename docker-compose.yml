@@ -14,11 +14,11 @@ services:
             - DB_USER=postgres
             - DB_PASS=123456
             - DB_ADDR=db:5432
+            
     db:
         container_name: ranepa_database
         image: postgres
         ports:
-            - "5432:5432"
+            - "5432"
         environment:
             - POSTGRES_PASSWORD=123456
-        command: echo hello world
