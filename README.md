@@ -10,7 +10,7 @@ docker-compose up -d db
 Then restore database from dump with 
 
 ```
-docker-compose run db pg_restore -d postgresql://postgres:123456@db' < ranepaback.sql`
+docker-compose run db pg_restore -d 'postgresql://postgres:123456@db' < ranepaback.sql
 ```
 And finally launch app with 
 
